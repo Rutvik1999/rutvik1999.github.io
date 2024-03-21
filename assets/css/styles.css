@@ -1,0 +1,841 @@
+/*===== GOOGLE FONTS =====*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+/*===== VARIABLES CSS =====*/
+:root {
+  --header-height: 3rem;
+  --font-semi: 600;
+  /*===== Colores =====*/
+  /*Purple 260 - Red 355 - Blue 224 - Pink 340*/
+  /* HSL color mode */
+  --hue-color: 255;
+  --first-color: hsl(var(--hue-color), 89%, 60%);
+  --second-color: hsl(var(--hue-color), 56%, 12%);
+  --third-color: #bdff52;
+  --text-color: white;
+  --card-color: #ffffff77;
+  /*===== Fuente y tipografia =====*/
+  --body-font: "Poppins", sans-serif;
+  --big-font-size: 2rem;
+  --h2-font-size: 1.75rem;
+  --normal-font-size: .938rem;
+  --smaller-font-size: .75rem;
+  /*===== Margenes =====*/
+  --mb-2: 1rem;
+  --mb-4: 1rem;
+  --mb-5: 2.5rem;
+  --mb-6: 1.5rem;
+  /*===== z index =====*/
+  --z-back: -10;
+  --z-fixed: 100;
+}
+@media screen and (min-width: 968px) {
+  :root {
+    --big-font-size: 3.5rem;
+    --h2-font-size: 2rem;
+    --normal-font-size: 1rem;
+    --smaller-font-size: .875rem;
+  }
+}
+
+
+/*===== BASE =====*/
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: var(--header-height) 0 0 0;
+  background-image: linear-gradient(to right, #5000d1, #d400ff);
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  color: var(--text-color);
+}
+
+h1, h2, p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/*===== CLASS CSS ===== */
+.section-title {
+  position: relative;
+  font-size: var(--h2-font-size);
+  color: var(--third-color);
+  margin-top: var(--mb-2);
+  margin-bottom: var(--mb-4);
+  text-align: center;
+}
+.section-title::after {
+  position: absolute;
+  content: "";
+  width: 0px;
+  height: 0.00rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 0rem;
+  background-color: var(--third-color);
+}
+
+.section {
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+}
+
+/*===== LAYOUT =====*/
+.bd-grid {
+  max-width: 1024px;
+  display: grid;
+  margin-left: var(--mb-2);
+  margin-right: var(--mb-2);
+}
+
+.l-header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  background-color: var(--third-color); 
+  box-shadow: 0 1px 4px rgba(146, 161, 176, 0.15);
+}
+
+/*===== NAV =====*/
+.nav {
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: var(--font-semi);
+}
+@media screen and (max-width: 767px) {
+  .nav__menu {
+    position: fixed;
+    top: var(--header-height);
+    right: -100%;
+    width: 80%;
+    height: 100%;
+    padding: 2rem;
+    background-color: var(--second-color);
+    transition: 0.5s;
+  }
+}
+.nav__item {
+  margin-bottom: var(--mb-4);
+}
+.nav__link {
+  position: relative;
+  color: #fff;
+}
+.nav__link:hover {
+  position: relative;
+}
+.nav__link:hover::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 0.18rem;
+  left: 0;
+  top: 2rem;
+  background-color: #000000;
+}
+.nav__logo {
+  color: #000000;
+  font-family: var(--body-font);
+  font-size: var(--h2-font-size) ;
+}
+.nav__toggle {
+  color: var(--second-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/*Active menu*/
+.active-link::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 0.18rem;
+  left: 0;
+  top: 2rem;
+  background-color: #000000;
+}
+
+/*=== Show menu ===*/
+.show {
+  right: 0;
+}
+
+/*===== HOME =====*/
+.home {
+  position: relative;
+  row-gap: 5rem;
+  padding: 4rem 0 5rem;
+}
+.home__data {
+  align-self: center;
+}
+.home__title {
+  font-size: var(--big-font-size);
+  margin-bottom: var(--mb-5);
+}
+.home__title-color {
+  color: var(--third-color);
+}
+.home__social {
+  display: flex;
+  flex-direction: column;
+}
+.home__social-icon {
+  width: max-content;
+  margin-bottom: var(--mb-2);
+  font-size: 1.5rem;
+  color: var(--third-color);
+}
+.home__social-icon:hover {
+  color: var(--text-color);
+}
+
+.home_text_image_wrapper {
+  display: flex;
+  flex-direction: row; /* Lay items out horizontally */
+  align-items: flex-start; /* Align items at their start */
+  gap: 20px; /* Space between text and image */
+}
+
+.home__img {
+  width: 260px; /* Or any other width */
+  height: auto; /* Maintain aspect ratio */
+}
+
+@media (max-width: 768px) {
+  .home_text_image_wrapper {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+  }
+}
+
+.home__blob {
+  fill: var(--first-color);
+}
+.home__blob-img {
+  width: 360px;
+}
+
+/*BUTTONS*/
+.button {
+  display: inline-block;
+  background-color: var(--third-color);
+  color: #000000;
+  padding: 0.75rem 2.5rem;
+  font-weight: var(--font-semi);
+  border-radius: 0.5rem;
+  transition: 0.3s;
+}
+.button:hover {
+  box-shadow: 0px 10px 36px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== ABOUT =====*/
+.about__container {
+  row-gap: 2rem;
+  text-align: center;
+}
+.about__subtitle {
+  margin-bottom: var(--mb-2);
+}
+.about__img {
+  justify-self: center;
+}
+.about__img img {
+  width: 200px;
+  border-radius: 0.5rem;
+}
+
+/* ===== SKILLS =====*/
+.skills-section {
+  text-align: center;
+  padding: 20px;
+   /* Light background for the whole section */
+}
+
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Create three columns of equal size */
+  gap: 20px; /* Space between cards */
+  justify-content: center; /* Center cards horizontally */
+  max-width: 1200px; /* Max width of the container */
+  margin: auto; /* Center the container itself */
+}
+
+@media screen and (max-width: 1200px) {
+  .skills-container {
+      grid-template-columns: repeat(2, 1fr); /* Adjust to two columns on smaller screens */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .skills-container {
+      grid-template-columns: 1fr; /* Single column for very small screens */
+  }
+}
+
+.skill-card {
+  background-color: var(--card-color); /* Translucent background */
+  border-radius: 10px; /* Rounded corners */
+  padding: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+.card-title {
+  color: #333; /* Dark text color for contrast */
+  margin-bottom: 5px;
+}
+
+.skill-card p {
+  color: #555; /* Slightly lighter text color */
+  text-align: center; /* Align text to the left */
+  font-size: 0.9em; /* Smaller font size */
+  color: #000000;
+}
+
+.skill-card ul {
+  list-style: none; /* Remove bullet points */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+  text-align: center; /* Ensure text is left-aligned */
+  color: #000000;
+}
+
+.skill-card li {
+  margin-bottom: 5px; /* Add some space between skills */
+}
+
+
+/* ===== WORK =====*/
+.work-experience-section {
+  padding: 20px;
+}
+
+.experience-container {
+  display: flex;
+  flex-direction: column; /* Align cards vertically */
+  gap: 20px; /* Space between cards */
+  max-width: 800px; /* Adjust based on preference */
+  margin: auto; /* Center the container */
+}
+
+.experience-card {
+  background-color: var(--card-color); /* Translucent background */
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  text-align: left; /* Ensure text is left-aligned */
+}
+
+.company-name-location {
+  margin-bottom: 5px; /* Space between job title and company/location */
+  color: #000000;
+  flex: 1; /* Allows the job title to take up the maximum width, pushing the button to the right */
+  margin: 0;
+}
+
+.job-title {
+  color: #000000;
+  margin: 0;
+}
+
+.company-work-period {
+  color: #00000083;
+}
+
+.experience-card ul {
+  list-style-type: disc; /* Default bullet points; adjust as needed */
+  padding-left: 20px; /* Adds indentation to align bullets within the card's content */
+  margin-top: 10px;
+}
+
+.experience-card li {
+  margin-bottom: 8px; /* Add some space between responsibilities */
+  text-align: left;
+}
+
+
+.title-and-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.expand-btn {
+  cursor: pointer;
+  font-size: 25px; /* Adjust the size of the "+" sign as needed */
+  font-weight: bold;
+  user-select: none; /* Prevent text selection */
+  /* Additional styling for button appearance */
+  /* Remove margin-left if previously added */
+}
+
+/* Initial state: content is hidden */
+.hidden {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+}
+
+/* Expanded state: content shows */
+/* Make sure to have a max-height larger than the tallest content you expect */
+.experience-details {
+  max-height: 0; /* Adjust this value if your content is taller */
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+}
+
+.experience-container ul.hidden {
+  display: none;
+}
+
+.experience-container ul {
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  max-height: 0; /* Initially collapsed */
+}
+
+.expand-all-btn {
+  cursor: pointer;
+  padding: 5px 10px;
+  position: absolute;
+  top: 20px;  /* Adjust as necessary */
+  right: 20px; /* Adjust as necessary */
+  z-index: 10; /* Ensure it's above other content */
+}
+
+/* Make sure the parent of the button, which is the work-experience-section, is positioned relatively */
+.work-experience-section {
+  position: relative; /* This is needed for absolute positioning of children */
+}
+
+
+.experience-card.expanded .expand-btn {
+  content: "-"; /* Change symbol to minus on expanded */
+}
+
+
+/* ===== EDUCATION =====*/
+
+.education-section {
+  text-align: center;
+  padding: 20px;
+  /* Add any additional styling for the section here */
+}
+
+.education-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Start with two columns of equal size */
+  gap: 20px; /* Space between cards */
+  justify-content: center; /* Center cards horizontally */
+  max-width: 1200px; /* Max width of the container */
+  margin: auto; /* Center the container itself */
+}
+
+@media screen and (max-width: 1200px) {
+  .education-container {
+    grid-template-columns: 1fr; /* Single column on smaller screens */
+  }
+}
+
+.education-card {
+  background-color: var(--card-color); /* Use the same card color variable as skills */
+  border-radius: 10px; /* Rounded corners */
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  /* Add any additional styling for the card here */
+}
+
+.education-card h3 {
+  color: #000000; /* Dark text color for contrast */
+  margin-bottom: 0px; /* Space below the university name */
+}
+.education-card h4 {
+  color: #000000; /* Dark text color for contrast */
+  margin-bottom: 10px; /* Space below the university name */
+  margin: 0;
+}
+
+.education-card p {
+  color: #000000; /* Slightly lighter text color */
+  text-align: center; /* Align text to the center */
+  font-size: 0.9em; /* Smaller font size */
+}
+
+
+.education-card ul {
+  list-style: none; /* Remove bullet points */
+  padding: 10; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+  text-align: center; /* Ensure text is center-aligned */
+}
+
+.education-card li {
+  margin-bottom: 8px; /* Add some space between courses */
+}
+
+/* ===== PROJECTS =====*/
+.project-section {
+  padding: 20px;
+}
+
+.project-container {
+  display: flex;
+  flex-direction: column; /* Align cards vertically */
+  gap: 20px; /* Space between cards */
+  max-width: 800px; /* Adjust based on preference */
+  margin: auto; /* Center the container */
+}
+
+.project-card {
+  background-color: var(--card-color); /* Translucent background */
+  border-radius: 10px; /* Rounded corners */
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  text-align: left; /* Ensure text is left-aligned */
+}
+
+
+.project-name {
+  color: #000000;
+  margin: 0;
+}
+
+
+.project-card ul {
+  list-style-type: disc; /* Default bullet points; adjust as needed */
+  padding-left: 20px; /* Adds indentation to align bullets within the card's content */
+  margin-top: 10px;
+}
+
+.project-card li {
+  margin-bottom: 8px; /* Add some space between responsibilities */
+  text-align: left;
+}
+
+
+.title-and-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.expand-btn {
+  cursor: pointer;
+  font-size: 25px; /* Adjust the size of the "+" sign as needed */
+  font-weight: bold;
+  user-select: none; /* Prevent text selection */
+  /* Additional styling for button appearance */
+  /* Remove margin-left if previously added */
+}
+
+/* Initial state: content is hidden */
+.hidden {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+}
+
+/* Expanded state: content shows */
+/* Make sure to have a max-height larger than the tallest content you expect */
+.project-details {
+  max-height: 0; /* Adjust this value if your content is taller */
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+}
+
+.project-container ul.hidden {
+  display: none;
+}
+
+.project-container ul {
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  max-height: 0; /* Initially collapsed */
+}
+
+.expand-all-btn {
+  cursor: pointer;
+  padding: 5px 10px;
+  position: absolute;
+  top: 20px;  /* Adjust as necessary */
+  right: 20px; /* Adjust as necessary */
+  z-index: 10; /* Ensure it's above other content */
+}
+
+/* Make sure the parent of the button, which is the work-experience-section, is positioned relatively */
+.project-section {
+  position: relative; /* This is needed for absolute positioning of children */
+}
+
+
+.project-card.expanded .expand-btn {
+  content: "-"; /* Change symbol to minus on expanded */
+}
+
+.title-and-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icons-container {
+  display: flex;
+  align-items: center;
+}
+
+.home__social-icon {
+  margin-right: 10px; /* Adjust the space between the GitHub icon and the "+" button */
+}
+
+/* ===== CERTIFICATES AND ACHIEVEMENTS =====*/
+
+.certifications-section {
+  padding: 20px;
+}
+
+.certifications-container {
+  display: flex;
+  flex-direction: column; /* Stack the 'paintings' one below the other */
+  gap: 20px; /* Space between the cards, like spacing between art pieces on a wall */
+  max-width: 800px;
+  margin: auto; /* Centers the gallery within the room */
+}
+
+.certification-card {
+  background-color: var(--card-color); /* The translucent 'glass' effect */
+  border-radius: 10px; /* Soft, rounded edges of the frame */
+  padding: 10px; /* Space inside the frame, giving the text room to breathe */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* A subtle shadow, like a frame's depth */
+}
+
+.certification-title {
+  margin: 0; /* Ensures the text is snug within its card */
+  color: #000000; /* The text, the 'painting', in a color that stands out on the 'glass' */
+}
+
+.certifications-card ul {
+  list-style-type: disc; /* Default bullet points; adjust as needed */
+  padding-left: 20px; /* Adds indentation to align bullets within the card's content */
+  margin-top: 10px;
+}
+
+.certifications-card li {
+  margin-bottom: 8px; /* Add some space between responsibilities */
+  text-align: left;
+}
+
+.title-icon-container-certifications {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.certifications-container ul {
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  max-height: 0; /* Initially collapsed */
+}
+
+.home__social-icon-certifications {
+  margin-left: auto; /* This pushes the icon to the right */
+}
+
+.certifications-section {
+  position: relative; /* This is needed for absolute positioning of children */
+}
+/* ===== CONTACT =====*/
+.contact__input {
+  width: 100%;
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-semi);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1.5px solid var(--second-color);
+  outline: none;
+  margin-bottom: var(--mb-4);
+}
+.contact__button {
+  display: block;
+  border: none;
+  outline: none;
+  font-size: var(--normal-font-size);
+  cursor: pointer;
+  margin-left: auto;
+}
+
+/* ===== FOOTER =====*/
+.footer {
+  background-color: var(--second-color);
+  color: #fff;
+  text-align: center;
+  font-weight: var(--font-semi);
+  padding: 2rem 0;
+}
+.footer__title {
+  font-size: 2rem;
+  margin-bottom: var(--mb-4);
+}
+.footer__social {
+  margin-bottom: var(--mb-4);
+}
+.footer__icon {
+  font-size: 1.5rem;
+  color: #fff;
+  margin: 0 var(--mb-2);
+}
+.footer__copy {
+  font-size: var(--smaller-font-size);
+}
+
+/* ===== MEDIA QUERIES=====*/
+@media screen and (max-width: 320px) {
+  .home {
+    row-gap: 2rem;
+  }
+  .home__img {
+    width: 200px;
+  }
+}
+@media screen and (min-width: 576px) {
+  .home {
+    padding: 4rem 0 2rem;
+  }
+  .home__social {
+    padding-top: 0;
+    padding-bottom: 2.5rem;
+    flex-direction: row;
+    align-self: flex-end;
+  }
+  .home__social-icon {
+    margin-bottom: 0;
+    margin-right: var(--mb-4);
+  }
+  .home__img {
+    width: 300px;
+    bottom: 25%;
+  }
+  .about__container {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    text-align: initial;
+  }
+  .skills__container {
+    grid-template-columns: 0.7fr;
+    justify-content: center;
+    column-gap: 1rem;
+  }
+  .work__container {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+    padding-top: 2rem;
+  }
+  .contact__form {
+    width: 360px;
+    padding-top: 2rem;
+  }
+  .contact__container {
+    justify-items: center;
+  }
+}
+@media screen and (min-width: 768px) {
+  body {
+    margin: 0;
+  }
+  .section {
+    padding-top: 4rem;
+    padding-bottom: 3rem;
+  }
+  .section-title {
+    margin-bottom: var(--mb-6);
+  }
+  .section-title::after {
+    width: 80px;
+    top: 3rem;
+  }
+  .nav {
+    height: calc(var(--header-height) + 1.5rem);
+  }
+  .nav__list {
+    display: flex;
+    padding-top: 0;
+  }
+  .nav__item {
+    margin-left: var(--mb-6);
+    margin-bottom: 0;
+  }
+  .nav__toggle {
+    display: none;
+  }
+  .nav__link {
+    color: var(--second-color);
+  }
+  .home {
+    padding: 8rem 0 2rem;
+  }
+  .home__img {
+    width: 400px;
+    bottom: 10%;
+  }
+  .about__container {
+    padding-top: 2rem;
+  }
+  .about__img img {
+    width: 300px;
+  }
+  .skills__container {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+    align-items: center;
+    text-align: initial;
+  }
+  .work__container {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 2rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .bd-grid {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .home {
+    padding: 10rem 0 2rem;
+  }
+  .home__img {
+    width: 450px;
+  }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+       only screen and (min--moz-device-pixel-ratio: 2),
+       only screen and (-o-min-device-pixel-ratio: 2/1),
+       only screen and (min-device-pixel-ratio: 2),
+       only screen and (min-resolution: 192dpi),
+       only screen and (min-resolution: 2dppx) {
+  /* Styles for high-resolution displays */
+}
