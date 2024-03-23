@@ -10,9 +10,9 @@
   --hue-color: 255;
   --first-color: hsl(var(--hue-color), 89%, 60%);
   --second-color: hsl(var(--hue-color), 56%, 12%);
-  --third-color: #bdff52;
+  --third-color: rgb(173, 255, 41);
   --text-color: white;
-  --card-color: #ffffff77;
+  --card-color: #ffffffa0;
   /*===== Fuente y tipografia =====*/
   --body-font: "Poppins", sans-serif;
   --big-font-size: 2rem;
@@ -49,7 +49,7 @@ html {
 
 body {
   margin: var(--header-height) 0 0 0;
-  background-image: linear-gradient(to right, #5000d1, #d400ff);
+  background-image: linear-gradient(to right, #5000d1, #b700db);
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   color: var(--text-color);
@@ -217,19 +217,19 @@ img {
 
 .home_text_image_wrapper {
   display: flex;
-  flex-direction: row; /* Lay items out horizontally */
-  align-items: flex-start; /* Align items at their start */
-  gap: 20px; /* Space between text and image */
+  flex-direction: row; 
+  align-items: flex-start; 
+  gap: 20px; 
 }
 
 .home__img {
-  width: 260px; /* Or any other width */
-  height: auto; /* Maintain aspect ratio */
+  width: 260px;
+  height: auto;
 }
 
 @media (max-width: 768px) {
   .home_text_image_wrapper {
-    flex-direction: column; /* Stack items vertically on smaller screens */
+    flex-direction: column;
   }
 }
 
@@ -274,59 +274,59 @@ img {
 .skills-section {
   text-align: center;
   padding: 20px;
-   /* Light background for the whole section */
+
 }
 
 .skills-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Create three columns of equal size */
-  gap: 20px; /* Space between cards */
-  justify-content: center; /* Center cards horizontally */
-  max-width: 1200px; /* Max width of the container */
-  margin: auto; /* Center the container itself */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px; 
+  justify-content: center; 
+  max-width: 1200px; 
+  margin: auto; 
 }
 
 @media screen and (max-width: 1200px) {
   .skills-container {
-      grid-template-columns: repeat(2, 1fr); /* Adjust to two columns on smaller screens */
+      grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media screen and (max-width: 768px) {
   .skills-container {
-      grid-template-columns: 1fr; /* Single column for very small screens */
+      grid-template-columns: 1fr; 
   }
 }
 
 .skill-card {
-  background-color: var(--card-color); /* Translucent background */
-  border-radius: 10px; /* Rounded corners */
+  background-color: var(--card-color); 
+  border-radius: 10px;
   padding: 5px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .card-title {
-  color: #333; /* Dark text color for contrast */
+  color: #000000; 
   margin-bottom: 5px;
 }
 
 .skill-card p {
-  color: #555; /* Slightly lighter text color */
-  text-align: center; /* Align text to the left */
-  font-size: 0.9em; /* Smaller font size */
+  color: #555; 
+  text-align: center;
+  font-size: 0.9em; 
   color: #000000;
 }
 
 .skill-card ul {
-  list-style: none; /* Remove bullet points */
-  padding: 0; /* Remove default padding */
-  margin: 0; /* Remove default margin */
-  text-align: center; /* Ensure text is left-aligned */
+  list-style: none; 
+  padding: 0; 
+  margin: 0; 
+  text-align: center; 
   color: #000000;
 }
 
 .skill-card li {
-  margin-bottom: 5px; /* Add some space between skills */
+  margin-bottom: 5px;
 }
 
 
@@ -337,24 +337,24 @@ img {
 
 .experience-container {
   display: flex;
-  flex-direction: column; /* Align cards vertically */
-  gap: 20px; /* Space between cards */
-  max-width: 800px; /* Adjust based on preference */
-  margin: auto; /* Center the container */
+  flex-direction: column; 
+  gap: 20px; 
+  max-width: 800px; 
+  margin: auto; 
 }
 
 .experience-card {
-  background-color: var(--card-color); /* Translucent background */
-  border-radius: 10px; /* Rounded corners */
+  background-color: var(--card-color); 
+  border-radius: 10px;
   padding: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
-  text-align: left; /* Ensure text is left-aligned */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  text-align: left; 
 }
 
 .company-name-location {
-  margin-bottom: 5px; /* Space between job title and company/location */
+  margin-bottom: 5px; 
   color: #000000;
-  flex: 1; /* Allows the job title to take up the maximum width, pushing the button to the right */
+  flex: 1; 
   margin: 0;
 }
 
@@ -368,13 +368,13 @@ img {
 }
 
 .experience-card ul {
-  list-style-type: disc; /* Default bullet points; adjust as needed */
-  padding-left: 20px; /* Adds indentation to align bullets within the card's content */
+  list-style-type: disc; 
+  padding-left: 20px; 
   margin-top: 10px;
 }
 
 .experience-card li {
-  margin-bottom: 8px; /* Add some space between responsibilities */
+  margin-bottom: 8px; 
   text-align: left;
 }
 
@@ -387,24 +387,22 @@ img {
 
 .expand-btn {
   cursor: pointer;
-  font-size: 25px; /* Adjust the size of the "+" sign as needed */
+  font-size: 25px; 
   font-weight: bold;
-  user-select: none; /* Prevent text selection */
-  /* Additional styling for button appearance */
-  /* Remove margin-left if previously added */
+  user-select: none; 
+
 }
 
-/* Initial state: content is hidden */
+
 .hidden {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.5s ease-in-out;
 }
 
-/* Expanded state: content shows */
-/* Make sure to have a max-height larger than the tallest content you expect */
+
 .experience-details {
-  max-height: 0; /* Adjust this value if your content is taller */
+  max-height: 0; 
   overflow: hidden;
   transition: max-height 0.5s ease-in-out;
 }
@@ -416,26 +414,25 @@ img {
 .experience-container ul {
   overflow: hidden;
   transition: max-height 0.3s ease-out;
-  max-height: 0; /* Initially collapsed */
+  max-height: 0; 
 }
 
 .expand-all-btn {
   cursor: pointer;
   padding: 5px 10px;
   position: absolute;
-  top: 20px;  /* Adjust as necessary */
-  right: 20px; /* Adjust as necessary */
-  z-index: 10; /* Ensure it's above other content */
+  top: 20px; 
+  right: 20px; 
+  z-index: 10; 
 }
 
-/* Make sure the parent of the button, which is the work-experience-section, is positioned relatively */
 .work-experience-section {
-  position: relative; /* This is needed for absolute positioning of children */
+  position: relative;
 }
 
 
 .experience-card.expanded .expand-btn {
-  content: "-"; /* Change symbol to minus on expanded */
+  content: "-"; 
 }
 
 
@@ -444,58 +441,57 @@ img {
 .education-section {
   text-align: center;
   padding: 20px;
-  /* Add any additional styling for the section here */
 }
 
 .education-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Start with two columns of equal size */
-  gap: 20px; /* Space between cards */
-  justify-content: center; /* Center cards horizontally */
-  max-width: 1200px; /* Max width of the container */
-  margin: auto; /* Center the container itself */
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 20px; 
+  justify-content: center; 
+  max-width: 1200px; 
+  margin: auto; 
 }
 
 @media screen and (max-width: 1200px) {
   .education-container {
-    grid-template-columns: 1fr; /* Single column on smaller screens */
+    grid-template-columns: 1fr; 
   }
 }
 
 .education-card {
-  background-color: var(--card-color); /* Use the same card color variable as skills */
-  border-radius: 10px; /* Rounded corners */
+  background-color: var(--card-color);
+  border-radius: 10px;
   padding: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
-  /* Add any additional styling for the card here */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
 }
 
 .education-card h3 {
-  color: #000000; /* Dark text color for contrast */
-  margin-bottom: 0px; /* Space below the university name */
+  color: #000000; 
+  margin-bottom: 0px; 
 }
 .education-card h4 {
-  color: #000000; /* Dark text color for contrast */
-  margin-bottom: 10px; /* Space below the university name */
+  color: #000000; 
+  margin-bottom: 10px; 
   margin: 0;
 }
 
 .education-card p {
-  color: #000000; /* Slightly lighter text color */
-  text-align: center; /* Align text to the center */
-  font-size: 0.9em; /* Smaller font size */
+  color: #000000; 
+  text-align: center;
+  font-size: 0.9em;
 }
 
 
 .education-card ul {
-  list-style: none; /* Remove bullet points */
-  padding: 10; /* Remove default padding */
-  margin: 0; /* Remove default margin */
-  text-align: center; /* Ensure text is center-aligned */
+  list-style: none; 
+  padding: 10;
+  margin: 0;
+  text-align: center; 
 }
 
 .education-card li {
-  margin-bottom: 8px; /* Add some space between courses */
+  margin-bottom: 8px;
 }
 
 /* ===== PROJECTS =====*/
@@ -505,18 +501,18 @@ img {
 
 .project-container {
   display: flex;
-  flex-direction: column; /* Align cards vertically */
-  gap: 20px; /* Space between cards */
-  max-width: 800px; /* Adjust based on preference */
-  margin: auto; /* Center the container */
+  flex-direction: column;
+  gap: 20px; 
+  max-width: 800px;
+  margin: auto; 
 }
 
 .project-card {
-  background-color: var(--card-color); /* Translucent background */
-  border-radius: 10px; /* Rounded corners */
+  background-color: var(--card-color);
+  border-radius: 10px; 
   padding: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
-  text-align: left; /* Ensure text is left-aligned */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  text-align: left; 
 }
 
 
@@ -527,13 +523,13 @@ img {
 
 
 .project-card ul {
-  list-style-type: disc; /* Default bullet points; adjust as needed */
-  padding-left: 20px; /* Adds indentation to align bullets within the card's content */
+  list-style-type: disc;
+  padding-left: 20px;
   margin-top: 10px;
 }
 
 .project-card li {
-  margin-bottom: 8px; /* Add some space between responsibilities */
+  margin-bottom: 8px; 
   text-align: left;
 }
 
@@ -546,24 +542,21 @@ img {
 
 .expand-btn {
   cursor: pointer;
-  font-size: 25px; /* Adjust the size of the "+" sign as needed */
+  font-size: 25px;
   font-weight: bold;
-  user-select: none; /* Prevent text selection */
-  /* Additional styling for button appearance */
-  /* Remove margin-left if previously added */
+  user-select: none;
 }
 
-/* Initial state: content is hidden */
+
 .hidden {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.5s ease-in-out;
 }
 
-/* Expanded state: content shows */
-/* Make sure to have a max-height larger than the tallest content you expect */
+
 .project-details {
-  max-height: 0; /* Adjust this value if your content is taller */
+  max-height: 0; 
   overflow: hidden;
   transition: max-height 0.5s ease-in-out;
 }
@@ -575,26 +568,26 @@ img {
 .project-container ul {
   overflow: hidden;
   transition: max-height 0.3s ease-out;
-  max-height: 0; /* Initially collapsed */
+  max-height: 0;
 }
 
 .expand-all-btn {
   cursor: pointer;
   padding: 5px 10px;
   position: absolute;
-  top: 20px;  /* Adjust as necessary */
-  right: 20px; /* Adjust as necessary */
-  z-index: 10; /* Ensure it's above other content */
+  top: 20px; 
+  right: 20px; 
+  z-index: 10; 
 }
 
-/* Make sure the parent of the button, which is the work-experience-section, is positioned relatively */
+
 .project-section {
-  position: relative; /* This is needed for absolute positioning of children */
+  position: relative;
 }
 
 
 .project-card.expanded .expand-btn {
-  content: "-"; /* Change symbol to minus on expanded */
+  content: "-";
 }
 
 .title-and-button {
@@ -609,7 +602,7 @@ img {
 }
 
 .home__social-icon {
-  margin-right: 10px; /* Adjust the space between the GitHub icon and the "+" button */
+  margin-right: 10px;
 }
 
 /* ===== CERTIFICATES AND ACHIEVEMENTS =====*/
@@ -620,32 +613,32 @@ img {
 
 .certifications-container {
   display: flex;
-  flex-direction: column; /* Stack the 'paintings' one below the other */
-  gap: 20px; /* Space between the cards, like spacing between art pieces on a wall */
+  flex-direction: column; 
+  gap: 20px; 
   max-width: 800px;
-  margin: auto; /* Centers the gallery within the room */
+  margin: auto; 
 }
 
 .certification-card {
-  background-color: var(--card-color); /* The translucent 'glass' effect */
-  border-radius: 10px; /* Soft, rounded edges of the frame */
-  padding: 10px; /* Space inside the frame, giving the text room to breathe */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* A subtle shadow, like a frame's depth */
+  background-color: var(--card-color); 
+  border-radius: 10px; 
+  padding: 10px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .certification-title {
-  margin: 0; /* Ensures the text is snug within its card */
-  color: #000000; /* The text, the 'painting', in a color that stands out on the 'glass' */
+  margin: 0; 
+  color: #000000;
 }
 
 .certifications-card ul {
-  list-style-type: disc; /* Default bullet points; adjust as needed */
-  padding-left: 20px; /* Adds indentation to align bullets within the card's content */
+  list-style-type: disc; 
+  padding-left: 20px; 
   margin-top: 10px;
 }
 
 .certifications-card li {
-  margin-bottom: 8px; /* Add some space between responsibilities */
+  margin-bottom: 8px;
   text-align: left;
 }
 
@@ -658,15 +651,19 @@ img {
 .certifications-container ul {
   overflow: hidden;
   transition: max-height 0.3s ease-out;
-  max-height: 0; /* Initially collapsed */
+  max-height: 0; 
 }
 
 .home__social-icon-certifications {
-  margin-left: auto; /* This pushes the icon to the right */
+  margin-left: auto;
+}
+
+.bx.bxs-certification {
+  color: var(--third-color);
 }
 
 .certifications-section {
-  position: relative; /* This is needed for absolute positioning of children */
+  position: relative;
 }
 /* ===== CONTACT =====*/
 .contact__input {
@@ -690,8 +687,8 @@ img {
 
 /* ===== FOOTER =====*/
 .footer {
-  background-color: var(--second-color);
-  color: #fff;
+  background-color: var(--third-color);
+  color: #000000;
   text-align: center;
   font-weight: var(--font-semi);
   padding: 2rem 0;
@@ -705,12 +702,17 @@ img {
 }
 .footer__icon {
   font-size: 1.5rem;
-  color: #fff;
+  color: #000000;
   margin: 0 var(--mb-2);
 }
 .footer__copy {
   font-size: var(--smaller-font-size);
 }
+
+.footer__icon:hover i {
+  color: #b700db;
+}
+
 
 /* ===== MEDIA QUERIES=====*/
 @media screen and (max-width: 320px) {
