@@ -12,7 +12,7 @@
   --second-color: hsl(var(--hue-color), 56%, 12%);
   --third-color: rgb(173, 255, 41);
   --text-color: white;
-  --card-color: #ffffffa0;
+  --card-color: #ffffff5c;
   /*===== Fuente y tipografia =====*/
   --body-font: "Poppins", sans-serif;
   --big-font-size: 2rem;
@@ -36,6 +36,7 @@
     --smaller-font-size: .875rem;
   }
 }
+
 
 
 /*===== BASE =====*/
@@ -686,13 +687,23 @@ img {
 }
 
 /* ===== FOOTER =====*/
+
 .footer {
   background-color: var(--third-color);
   color: #000000;
   text-align: center;
   font-weight: var(--font-semi);
   padding: 2rem 0;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
 }
+
+
+
 .footer__title {
   font-size: 2rem;
   margin-bottom: var(--mb-4);
